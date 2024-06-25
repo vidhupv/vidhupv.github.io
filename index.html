@@ -1,29 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
   <title>Vidhu P V</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="infinityfavicon.png">
+  <style>
+    body {
+      transition: background-color 0.5s, color 0.5s;
+    }
+    body.dark-mode {
+      background-color: #111;
+      color: #fff;
+    }
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1 class="name">Vidhu P V</h1>
     <div class="desc">
-      <p>Hi! I'm currently studying Math Computing(Math&CS) at UMass Amherst(graduating Dec 2024). My world revolves around Tech, Sports and Movies. I love building stuff people feel happy to use. You can probably find me reading about the latest tech startups, movies or maybe just watching an NBA game. </p>
-      <p>
-          Blog and more cool features(hopefully) coming soon. Building this out as I learn more web development.
-      </p>
+      <p>Hi! I'm a Math Computing student at UMass Amherst.</p>
     </div>
     <p id="sign">
-        Best,<br>
-        <aside id="signature">
-          <a href="https://x.com/vidhupv" target="_blank">Vidhu</a>
-        </aside>
-      </p>
-    <!-- Start of Links -->
+      Best,<br>
+      <aside id="signature">
+        <a href="https://x.com/vidhupv" target="_blank">Vidhu</a>
+      </aside>
+    </p>
     <section class="social">
       <li><a class="social-link" href="https://www.linkedin.com/in/vidhupv/" target="_blank">LinkedIn</a></li>
+      <li><a id="modeToggle" class="social-link" href="#">dark-mode.exe</a></li>
     </section>
-    <!-- End of Links -->
   </div>
+
+  <canvas id="starCanvas"></canvas>
+
+  <script>
+    var toggleTimeout;  // Variable to store the timeout reference
+
+    document.getElementById('modeToggle').addEventListener('click', function() {
+        // Check if dark mode is currently not active and no timeout is set
+        if (!document.body.classList.contains('dark-mode') && !toggleTimeout) {
+            // Set a new timeout for 7 seconds before turning on dark mode
+            toggleTimeout = setTimeout(function() {
+                document.body.classList.add('dark-mode');
+                toggleTimeout = null; // Reset the timeout reference after applying dark mode
+            }, 6300); // 6300 milliseconds = 6.3 seconds
+        } else {
+            // If dark mode is active or the button is clicked again during the delay:
+            // 1. Turn off dark mode immediately if it's active
+            // 2. Clear any existing timeout
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+            }
+            clearTimeout(toggleTimeout);
+            toggleTimeout = null; // Reset the timeout reference
+        }
+    });
+
+    document.getElementById('modeToggle').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevents the default link behavior
+        var audio = document.getElementById('nightSound');
+
+        // Check if the audio is playing
+        if (!audio.paused) {
+            // If playing, pause it
+            audio.pause();
+            audio.currentTime = 0; // Optionally, reset the audio to the start
+        } else {
+            // If not playing, play the audio
+            audio.play();
+        }
+    });
+
+    var starTimeout;
+    var starCanvas = document.getElementById('starCanvas');
+    var ctx = starCanvas.getContext('2d');
+
+    // Resize canvas to full window size
+    function resizeCanvas() {
+      starCanvas.width = window.innerWidth;
+      starCanvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', resizeCanvas);
+    resizeCanvas(); // Call this function to set the initial size of the canvas
+
+    var stars = []; // Array to hold the stars
+    var shootingStars = []; // Array to hold the shooting stars
+
+    // Function to create a star
+    function Star(x, y, radius) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.alpha = Math.random();
+      this.alphaChange = Math.random() * 0.05;
+
+      this.draw = function() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+          ctx.fillStyle = '#fff';
+          ctx.fill();
+          ctx.restore();
+      }
+
+      this.update = function() {
+          this.alpha += this.alphaChange;
+          if (this.alpha <= 0.1 || this.alpha >= 1) {
+              this.alphaChange = -this.alphaChange;
+          }
+      }
+    }
+
+    // Function to create a shooting star
+    function ShootingStar() {
+        this.x = Math.random() * starCanvas.width;
+        this.y = 0;
+        this.length = Math.random() * 80 + 10;
+        this.speed = Math.random() * 10 + 6;
+        this.alpha = 1;
+
+        this.draw = function() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(this.x + this.length, this.y + this.length);
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.restore();
+        };
+
+        this.update = function() {
+            this.x += this.speed;
+            this.y += this.speed;
+            this.alpha -= 0.01;
+            if (this.alpha <= 0) {
+                this.reset();
+            }
+        };
+
+        this.reset = function() {
+            this.x = Math.random() * starCanvas.width;
+            this.y = 0;
+            this.length = Math.random() * 80 + 10;
+            this.speed = Math.random() * 10 + 6;
+            this.alpha = 1;
+        }
+    }
+
+    // Function to create stars
+    function createStars(count) {
+        for (var i = 0; i < count; i++) {
+            var x = Math.random() * starCanvas.width;
+            var y = Math.random() * starCanvas.height;
+            var radius = Math.random() * 1 + 1;
+            stars.push(new Star(x, y, radius));
+        }
+    }
+
+    // Function to create shooting stars
+    function createShootingStars(count) {
+        for (var i = 0; i < count; i++) {
+            shootingStars.push(new ShootingStar());
+        }
+    }
+
+    // Animation function
+    function animate() {
+      ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      stars.forEach(function(star) {
+          star.update(); // Update the star (for glimmering effect)
+          star.draw();
+      });
+      shootingStars.forEach(function(shootingStar) {
+          shootingStar.update();
+          shootingStar.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    // Button click event handler
+    document.getElementById('modeToggle').addEventListener('click', function() {
+        if (!starTimeout) {
+            starTimeout = setTimeout(function() {
+                createStars(100); // Create 100 stars
+                createShootingStars(2); // Create 2 shooting stars
+                animate();
+            }, 6300); // Delay of 6.3 seconds
+        } else {
+            clearTimeout(starTimeout);
+            starTimeout = null;
+            ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+            stars = [];
+            shootingStars = [];
+        }
+    });
+
+    function resizeCanvas() {
+        var ratio = window.devicePixelRatio || 1;
+        starCanvas.width = window.innerWidth * ratio;
+        starCanvas.height = window.innerHeight * ratio;
+        starCanvas.style.width = window.innerWidth + 'px';
+        starCanvas.style.height = window.innerHeight + 'px';
+        ctx.scale(ratio, ratio);
+    }
+  </script>
+    </body>
+</html>
