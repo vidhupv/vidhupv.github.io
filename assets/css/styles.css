@@ -39,19 +39,21 @@ p, .desc, #sign {
 
 .desc {
     margin-bottom: 50px;
+    font-size: 18px; /* Adjust the font size to make it smaller */
 }
 
 .social ul {
-    display: flex;
-    flex-direction: row;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Ensure flex direction is row */
     list-style: none;
     margin-top: 25px;
-    padding: 0;
+    padding: 0; /* Remove default padding */
+    justify-content: center; /* Center the social links */
 }
 
 .social li {
-    list-style: none;
-    margin-right: 15px;
+    list-style: none; /* Remove default list styling */
+    margin-right: 15px; /* Adjust spacing between links */
 }
 
 .social-link {
