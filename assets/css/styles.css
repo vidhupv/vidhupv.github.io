@@ -17,29 +17,47 @@ html, body {
     color: rgb(0,0,0);
     transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
+
 body {
     padding: env(safe-area-inset);
 }
+
+/* Container Styling */
+.container {
+    max-width: 359px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+}
+
 h1, p, .desc, .social-link {
     color: rgb(0,0,0);
     transition: color 10s ease; /* Add transition to all text elements */
 }
+
 h1 {
     font-size: 40px;
 }
+
 p, .desc {
-    width: auto;
-    margin: 0 auto;
-    max-width: 359px; /* Match this with the container max-width */
+    width: 100%;
+    margin: 0;
+    text-align: left; /* Align text to the left */
 }
+
 .desc {
     margin-bottom: 50px;
     font-size: 18px; /* Adjust the font size to make it smaller */
 }
+
+/* Social Links Styling */
 .social {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the social links */
+    flex-wrap: wrap;
     margin-top: 25px;
     padding: 0;
 }
@@ -47,7 +65,7 @@ p, .desc {
 .social li {
     list-style: none;
     display: inline-block;
-    margin: 0 5px;
+    margin: 5px 10px;
 }
 
 .social-link {
@@ -58,16 +76,20 @@ p, .desc {
 }
 
 .social-link:hover {
+    color: #ffffff;
     text-decoration: overline;
 }
+
 .name {
     margin-bottom: -5px;
 }
+
 /* Space Mode Styles */
 body.space-mode {
     background-color: rgb(10, 10, 11);
     color: rgb(255, 218, 185); /* Changed to peach color */
 }
+
 body.space-mode h1,
 body.space-mode p,
 body.space-mode .desc,
@@ -77,6 +99,7 @@ body.space-mode a.social-link,
 body.space-mode #signature {
     color: rgb(255, 218, 185); /* Changed to peach color */
 }
+
 /* Star Canvas Styles */
 #starCanvas {
     position: fixed;
@@ -86,19 +109,23 @@ body.space-mode #signature {
     height: 100%;
     z-index: 1;
 }
+
 /* Ensure content is above the canvas */
 body * {
     position: relative;
     z-index: 2;
 }
-/* Container Styling */
-.container {
-    max-width: 359px;
-    margin: 0 auto;
-}
+
 /* Viewport Fit */
 @viewport {
     width: device-width;
     initial-scale: 1;
     viewport-fit: cover;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+    .social {
+        justify-content: flex-start; /* Align links to the left on mobile */
+    }
 }
