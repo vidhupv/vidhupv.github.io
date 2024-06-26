@@ -8,18 +8,18 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(100,85,73); /* Peach background */
+    background-color: rgb(255, 218, 185); /* Peach background */
     font-family: 'JetBrains Mono', monospace;
     font-size: 22px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #c2f6ff;
-    transition: background-color 10s ease; /* Transition for background color */
+    transition: background-color 10s ease, color 10s ease; /* Transition for background and text color */
 }
 
 body {
-    margin: 40px;
+    margin: 0; /* Remove margin to avoid border issues */
     padding: env(safe-area-inset);
 }
 
@@ -55,7 +55,7 @@ p, .desc, #sign {
     color: #c2f6ff;
     border-radius: 5px;
     font-size: 18px;
-    font-family: "Family", sans-serif; /* Make sure to define 'Family' font */
+    font-family: 'JetBrains Mono', monospace; /* Ensure all text uses JetBrains Mono */
 }
 
 .social-link:hover {
@@ -64,7 +64,7 @@ p, .desc, #sign {
 }
 
 #signature {
-    font-family: "Caveat", cursive; /* Cursive font for the signature */
+    font-family: 'JetBrains Mono', monospace; /* Ensure all text uses JetBrains Mono */
     font-size: 30px;
     color: #ffffff;
     margin-top: 7px;
