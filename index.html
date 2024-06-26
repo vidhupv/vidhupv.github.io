@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      transition: background-color 16.5s, color 16.5s;
+      transition: background-color 17s, color 17s;
       background-color: white;
       color: black;
     }
@@ -175,10 +175,10 @@
         createStars(100);
         animate();
 
-        // Set timeout for shooting stars at 16 seconds
+        // Set timeout for shooting stars at 17 seconds
         toggleTimeout = setTimeout(function() {
           createShootingStars(2);
-        }, 16800);
+        }, 17000);
       } else {
         // Reset everything
         clearTimeout(toggleTimeout);
