@@ -39,6 +39,7 @@ h1, p, .desc, .social-link {
 h1 {
     font-size: 40px;
     margin-top: 0;
+    text-align: left;
 }
 
 p, .desc {
@@ -128,5 +129,13 @@ body * {
 @media (max-width: 480px) {
     .container {
         padding: 0 10px; /* Slightly reduce padding on smaller screens */
+    }
+    
+    .social {
+        justify-content: flex-start; /* Ensure left alignment on mobile */
+    }
+    
+    .social li {
+        margin-right: 10px; /* Slightly reduce space between links on mobile */
     }
 }
