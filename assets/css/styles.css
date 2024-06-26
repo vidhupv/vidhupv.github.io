@@ -24,13 +24,14 @@ body {
 
 h1 {
     font-size: 40px;
-    color: #ffffff;
+    color: rgb(0,0,0);
 }
 
 p, .desc, #sign {
     width: auto;
     margin: 0 auto;
     max-width: 359px; /* Match this with the container max-width */
+    
 }
 
 .desc {
