@@ -1,95 +1,90 @@
-body {
-      transition: background-color 16s, color 16s;
-      background-color: white;
-      color: black;
-    }
-    body.space-mode {
-      background-color: #111;
-      color: #fff;
-    }
-    #starCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 5s;
-    }
-    body.space-mode #starCanvas {
-      opacity: 1;
-    }
-
+/* General Page Styles */
 html, body {
-    padding: 0;
+    height: 100%;
     margin: 0;
+    padding: 0; /* Remove default padding */
+    font-family: 'JetBrains Mono', monospace; 
+    font-size: 16px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center; /* Vertically center content */
+}
 
+/* Main Container Styles */
+.container {
+    text-align: center; /* Center content within container */
+    max-width: 359px; /* Set a max-width for content */
+}
+
+/* Name Styles */
+.name {
+    font-size: 2em;
+    color: #fff; /* Set text color for better contrast */
+    margin-bottom: 10px; /* Add some spacing below */
+}
+
+/* Description Styles */
+.desc {
+    margin-bottom: 20px; /* Add spacing below description */
+}
+
+/* Signature Styles */
+#sign {
+    margin-bottom: 30px; /* Add more space below signature */
+}
+
+#signature a {
+    color: #fff; /* Link color for better contrast */
+    text-decoration: none;
+}
+
+/* Social Links Styles */
+.social {
+    list-style: none;
+    padding: 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px; /* Adjust padding for better button look */
+    background-color: #fff; /* White background for normal mode */
+    color: #111;         /* Black text for normal mode */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+/* Space Mode Styles */
+body.space-mode {
+    background-color: #111;
+    color: #fff;
+}
+
+body.space-mode .social-link {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Star Canvas Styles */
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-
-    /* background-color: #121a21; */
-    background-color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-
-    font-size: 16px;
-    /* color: #FFF; */
-    color: #000;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* align-items: center; */
+    z-index: -1; /* Place behind content */
+    opacity: 0;
+    transition: opacity 5s;
 }
 
-
-body {
-  margin: 40px;
-  padding: env(safe-area-inset);
+body.space-mode #starCanvas {
+    opacity: 1;
 }
 
-h1 { 
-  font-size: 40px;
-  color: #ffffff;
-}
-
-p, .desc, #sign {
-  width: auto;
-  margin: 0 auto;
-  max-width: 359px; /* Match this with the container max-width */
-}
-
-.desc {
-  margin-bottom: 50px;
-}
-
-/* Ensures the star canvas covers the entire viewport and is just above the background */
-#starCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Above the background */
-}
-/* Set a base index for all elements that you want above the canvas */
-body * {
-  position: relative;
-  z-index: 2; /* This ensures that all content is above the canvas */
-}
-
-/* Optionally, if there's a specific background element */
-.background-element {
-  position: relative; /* or 'absolute', 'fixed', or 'sticky' */
-  z-index: 0; /* Below the canvas */
-}
-
-.container {
-  max-width: 359px; /* Adjust as needed */
-  margin: 0 auto; /* Centers the container */
-}
+/* Viewport Adjustment */
 @viewport {
-  width: device-width;
-  initial-scale: 1;
-  viewport-fit: cover;
+    width: device-width;
+    initial-scale: 1;
+    viewport-fit: cover;
 }
