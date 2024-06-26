@@ -14,7 +14,7 @@ html, body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #c2f6ff;
+    color: rgb(0,0,0);
     transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
 
@@ -38,15 +38,16 @@ p, .desc, #sign {
 }
 
 .social ul {
-    display: flex;
-    flex-direction: row; /* Ensure flex direction is row */
-    list-style: none;
-    margin-top: 25px;
-    padding: 0; /* Remove default padding */
+  display: flex;
+  flex-direction: row; /* Ensure flex direction is row */
+  list-style: none;
+  margin-top: 25px;
+  padding: 0; /* Remove default padding */
 }
 
 .social li {
-    margin-right: 15px; /* Adjust spacing between links */
+  list-style: none; /* Remove default list styling */
+  margin-right: 15px; /* Adjust spacing between links */
 }
 
 .social-link {
