@@ -1,141 +1,126 @@
-
-
 /* General Styles */
 html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: ; FFDAB9
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 22px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #c2f6ff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFDAB9; /* Peach background */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #c2f6ff;
+    transition: background-color 1s ease; /* Transition for background color */
 }
 
 body {
-  margin: 40px;
-  padding: env(safe-area-inset);
+    margin: 40px;
+    padding: env(safe-area-inset);
 }
 
-h1 { 
-  font-size: 40px;
-  color: #ffffff;
+h1 {
+    font-size: 40px;
+    color: #ffffff;
 }
 
 p, .desc, #sign {
-  width: auto;
-  margin: 0 auto;
-  max-width: 359px; /* Match this with the container max-width */
+    width: auto;
+    margin: 0 auto;
+    max-width: 359px; /* Match this with the container max-width */
 }
 
 .desc {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .social ul {
-  display: flex;
-  flex-direction: row; /* Ensure flex direction is row */
-  list-style: none;
-  margin-top: 25px;
-  padding: 0; /* Remove default padding */
+    display: flex;
+    flex-direction: row; /* Ensure flex direction is row */
+    list-style: none;
+    margin-top: 25px;
+    padding: 0; /* Remove default padding */
 }
 
 .social li {
-  list-style: none; /* Remove default list styling */
-  margin-right: 15px; /* Adjust spacing between links */
+    list-style: none; /* Remove default list styling */
+    margin-right: 15px; /* Adjust spacing between links */
 }
 
 .social-link {
-  color: #c2f6ff;
-  border-radius: 5px;
-  font-size: 18px;
-  font-family: "Family", sans-serif;
+    color: #c2f6ff;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: "Family", sans-serif; /* Make sure to define 'Family' font */
 }
 
 .social-link:hover {
-  color: #ffffff;
-  text-decoration: overline;
+    color: #ffffff;
+    text-decoration: overline;
 }
 
 #signature {
-  font-family: "Caveat";
-  font-size: 30px;
-  color: #ffffff;
-  margin-top: 7px;
-  line-height: 100%;
+    font-family: "Caveat", cursive; /* Cursive font for the signature */
+    font-size: 30px;
+    color: #ffffff;
+    margin-top: 7px;
+    line-height: 100%;
 }
 
 #sign {
-  margin-top: -15px;
+    margin-top: -15px;
 }
 
 .name {
-  margin-bottom: -5px;
+    margin-bottom: -5px;
 }
 
+/* Space Mode Styles */
 body.space-mode {
-  background-color: rgb(10, 10, 11);
-  position:absolute; 
-  height:100%; 
-  width:100%;
-  color: white;
+    background-color: rgb(10, 10, 11);
+    color: white;
 }
 
 body.space-mode a,
 body.space-mode a.social-link {
-  color: white;
+    color: white;
 }
 
-/* Ensures the star canvas covers the entire viewport and is just above the background */
+/* Star Canvas Styles */
 #starCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Above the background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Above the background */
 }
 
-/* Set a base index for all elements that you want above the canvas */
+/* Ensure content is above the canvas */
 body * {
-  position: relative;
-  z-index: 2; /* This ensures that all content is above the canvas */
+    position: relative;
+    z-index: 2;
 }
 
-/* Optionally, if there's a specific background element */
-.background-element {
-  position: relative; /* or 'absolute', 'fixed', or 'sticky' */
-  z-index: 0; /* Below the canvas */
-}
-
+/* Container Styling */
 .container {
-  max-width: 359px; /* Adjust as needed */
-  margin: 0 auto; /* Centers the container */
+    max-width: 359px;
+    margin: 0 auto; /* Centers the container */
 }
 
-/* Ensuring viewport fit */
+/* Viewport Fit */
 @viewport {
-  width: device-width;
-  initial-scale: 1;
-  viewport-fit: cover;
+    width: device-width;
+    initial-scale: 1;
+    viewport-fit: cover;
 }
 
 /* Additional Styling */
 #signature a, #signature a:visited {
-  color: inherit; /* Use the current text color */
-  text-decoration: none; /* Remove the underline */
-}
-
-.superscript-fix {
-  vertical-align: baseline;
-  position: relative;
-  top: -0.5em; /* Adjust this value as needed */
-  font-size: 0.8em; /* Adjust the size to make it smaller if necessary */
+    color: inherit; 
+    text-decoration: none; 
 }
