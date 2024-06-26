@@ -8,14 +8,14 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #FFDAB9; /* Peach background */
+    background-color: rgb(100,85,73); /* Peach background */
     font-family: 'JetBrains Mono', monospace;
     font-size: 22px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #c2f6ff;
-    transition: background-color 1s ease; /* Transition for background color */
+    transition: background-color 10s ease; /* Transition for background color */
 }
 
 body {
