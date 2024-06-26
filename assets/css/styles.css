@@ -14,7 +14,7 @@ html, body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: rgb(0,0,0);
+    color: #863b87;
     transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
 
@@ -24,14 +24,14 @@ body {
 
 h1 {
     font-size: 40px;
-    color: rgb(0,0,0);
+    color: #863b87;
 }
 
 p, .desc, #sign {
     width: auto;
     margin: 0 auto;
     max-width: 359px; /* Match this with the container max-width */
-    color: rgb(0,0,0);
+    color: #863b87;
 }
 
 .desc {
@@ -52,7 +52,7 @@ p, .desc, #sign {
 }
 
 .social-link {
-    color: rgb(0,0,0);
+    color: #863b87;
     border-radius: 5px;
     font-size: 18px;
 }
@@ -80,12 +80,12 @@ p, .desc, #sign {
 /* Space Mode Styles */
 body.space-mode {
     background-color: rgb(10, 10, 11);
-    color: white;
+    color: #863b87;
 }
 
 body.space-mode a,
 body.space-mode a.social-link {
-    color: white;
+    color: #863b87;
 }
 
 /* Star Canvas Styles */
