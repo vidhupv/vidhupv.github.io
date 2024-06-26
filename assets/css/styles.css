@@ -38,25 +38,25 @@ p, .desc {
 }
 .social ul {
     display: flex;
-    flex-direction: row; /* Change back to row layout */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     padding: 0;
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .social li {
-    list-style: none;
-    margin: 0 5px; /* Add horizontal space between links */
+    display: inline-block; /* Ensure inline display */
+    margin: 0 5px;
 }
 
 .social-link {
     border-radius: 5px;
-    font-size: 14px; /* Keep the smaller font size */
+    font-size: 14px;
     padding: 2px 5px;
-    display: inline-block; /* Ensure inline display */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .social-link:hover {
