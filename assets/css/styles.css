@@ -1,21 +1,19 @@
 /* Reset and base styles */
-html, body {
+body, html {
     margin: 0;
     padding: 0;
-    width: 100%;
     height: 100%;
-    overflow: hidden;
-}
-
-body {
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: background-color 16s ease, color 16s ease;
     background-color: white;
     color: black;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Space mode styles */
@@ -39,7 +37,6 @@ body.space-mode {
     text-align: center;
     max-width: 359px;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 /* Name styles */
@@ -73,19 +70,4 @@ body.space-mode {
 body.space-mode .social-link {
     background-color: #333;
     color: #fff;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    .name {
-        font-size: 32px;
-    }
-
-    .social-link {
-        padding: 8px 16px;
-    }
 }
