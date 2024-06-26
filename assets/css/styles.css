@@ -81,7 +81,7 @@ p, .desc, #sign {
 /* Space Mode Styles */
 body.space-mode {
     background-color: rgb(10, 10, 11);
-    color: rgb(255, 218, 185);
+    color: rgb(255, 218, 185); /* Changed to peach color */
 }
 
 body.space-mode h1,
@@ -91,7 +91,7 @@ body.space-mode #sign,
 body.space-mode a,
 body.space-mode a.social-link,
 body.space-mode #signature {
-    color: rgb(255, 218, 185);
+    color: rgb(255, 218, 185); /* Changed to peach color */
 }
 
 /* Star Canvas Styles */
