@@ -14,7 +14,7 @@ html, body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: rgb(0,0,0); /* Changed to black */
+    color: rgb(0,0,0);
     transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
 
@@ -22,16 +22,19 @@ body {
     padding: env(safe-area-inset);
 }
 
+h1, p, .desc, #sign, .social-link, #signature {
+    color: rgb(0,0,0);
+    transition: color 10s ease; /* Add transition to all text elements */
+}
+
 h1 {
     font-size: 40px;
-    color: rgb(0,0,0); /* Changed to black */
 }
 
 p, .desc, #sign {
     width: auto;
     margin: 0 auto;
     max-width: 359px; /* Match this with the container max-width */
-    color: rgb(0,0,0); /* Changed to black */
 }
 
 .desc {
@@ -39,20 +42,19 @@ p, .desc, #sign {
 }
 
 .social ul {
-  display: flex;
-  flex-direction: row; /* Ensure flex direction is row */
-  list-style: none;
-  margin-top: 25px;
-  padding: 0; /* Remove default padding */
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-top: 25px;
+    padding: 0;
 }
 
 .social li {
-  list-style: none; /* Remove default list styling */
-  margin-right: 15px; /* Adjust spacing between links */
+    list-style: none;
+    margin-right: 15px;
 }
 
 .social-link {
-    color: rgb(0,0,0); /* Changed to black */
     border-radius: 5px;
     font-size: 18px;
 }
@@ -64,7 +66,6 @@ p, .desc, #sign {
 
 #signature {
     font-size: 30px;
-    color: rgb(0,0,0); /* Changed to black */
     margin-top: 7px;
     line-height: 100%;
 }
@@ -100,7 +101,7 @@ body.space-mode #signature {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Above the background */
+    z-index: 1;
 }
 
 /* Ensure content is above the canvas */
@@ -112,7 +113,7 @@ body * {
 /* Container Styling */
 .container {
     max-width: 359px;
-    margin: 0 auto; /* Centers the container */
+    margin: 0 auto;
 }
 
 /* Viewport Fit */
