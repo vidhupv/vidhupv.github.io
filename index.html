@@ -1,172 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Vidhu P V</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1 class="name">Vidhu P V</h1>
-    <div class="desc">
-      <p>Hi! I'm a Math Computing student at UMass Amherst.</p>
-    </div>
-    <p id="sign">
-      Best,<br>
-      <aside id="signature">
-        <a href="https://x.com/vidhupv" target="_blank">Vidhu</a>
-      </aside>
-    </p>
-    <section class="social">
-      <li><a class="social-link" href="https://www.linkedin.com/in/vidhupv/" target="_blank">LinkedIn</a></li>
-      <li><a id="modeToggle" class="social-link" href="#">space-mode.exe</a></li>
-    </section>
-  </div>
+/* Reset and base styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-  <canvas id="starCanvas"></canvas>
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 16s ease, color 16s ease;
+    background-color: white;
+    color: black;
+}
 
-  <audio id="spaceModeAudio" loop>
-    <source src="audio/HighbyYoungthugEltonJohn.mp3" type="audio/mpeg">
-  </audio>
+/* Space mode styles */
+body.space-mode {
+    background-color: #000;
+    color: #fff;
+}
 
-  <script>
-    var toggleTimeout;
-    var starCanvas = document.getElementById('starCanvas');
-    var ctx = starCanvas.getContext('2d');
-    var stars = [];
-    var shootingStars = [];
+/* Star canvas styles */
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
-    function resizeCanvas() {
-      var ratio = window.devicePixelRatio || 1;
-      starCanvas.width = window.innerWidth * ratio;
-      starCanvas.height = window.innerHeight * ratio;
-      starCanvas.style.width = window.innerWidth + 'px';
-      starCanvas.style.height = window.innerHeight + 'px';
-      ctx.scale(ratio, ratio);
+/* Main container styles */
+.container {
+    text-align: center;
+    max-width: 359px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Name styles */
+.name {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Description and signature styles */
+.desc, #sign {
+    margin-bottom: 20px;
+}
+
+/* Social links styles */
+.social {
+    list-style: none;
+    padding: 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.space-mode .social-link {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
     }
 
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('orientationchange', resizeCanvas);
-    resizeCanvas();
-
-    function Star(x, y, radius) {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-      this.alpha = Math.random();
-      this.alphaChange = Math.random() * 0.04;
-
-      this.draw = function() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#fff';
-        ctx.fill();
-        ctx.restore();
-      }
-
-      this.update = function() {
-        this.alpha += this.alphaChange;
-        if (this.alpha <= 0.1 || this.alpha >= 1) {
-          this.alphaChange = -this.alphaChange;
-        }
-      }
+    .name {
+        font-size: 32px;
     }
 
-    function ShootingStar() {
-      this.x = Math.random() * starCanvas.width;
-      this.y = 0;
-      this.length = Math.random() * 80 + 10;
-      this.speed = Math.random() * 10 + 6;
-      this.alpha = 1;
-
-      this.draw = function() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.x + this.length, this.y + this.length);
-        ctx.strokeStyle = '#fff';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        ctx.restore();
-      };
-
-      this.update = function() {
-        this.x += this.speed;
-        this.y += this.speed;
-        this.alpha -= 0.01;
-        if (this.alpha <= 0) {
-          this.reset();
-        }
-      };
-
-      this.reset = function() {
-        this.x = Math.random() * starCanvas.width;
-        this.y = 0;
-        this.length = Math.random() * 80 + 10;
-        this.speed = Math.random() * 10 + 6;
-        this.alpha = 1;
-      }
+    .social-link {
+        padding: 8px 16px;
     }
-
-    function createStars(count) {
-      for (var i = 0; i < count; i++) {
-        var x = Math.random() * starCanvas.width;
-        var y = Math.random() * starCanvas.height;
-        var radius = Math.random() * 1 + 1;
-        stars.push(new Star(x, y, radius));
-      }
-    }
-
-    function createShootingStars(count) {
-      for (var i = 0; i < count; i++) {
-        shootingStars.push(new ShootingStar());
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-      stars.forEach(function(star) {
-        star.update();
-        star.draw();
-      });
-      shootingStars.forEach(function(shootingStar) {
-        shootingStar.update();
-        shootingStar.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    document.getElementById('modeToggle').addEventListener('click', function(event) {
-      event.preventDefault();
-      var audio = document.getElementById('spaceModeAudio');
-
-      if (!document.body.classList.contains('space-mode')) {
-        // Start transition to space mode
-        document.body.classList.add('space-mode');
-        audio.play();
-
-        // Create and animate stars immediately
-        createStars(100);
-        animate();
-
-        // Set timeout for shooting stars at 17 seconds
-        toggleTimeout = setTimeout(function() {
-          createShootingStars(4);
-        }, 16300);
-      } else {
-        // Reset everything
-        clearTimeout(toggleTimeout);
-        document.body.classList.remove('space-mode');
-        audio.pause();
-        audio.currentTime = 0;
-        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-        stars = [];
-        shootingStars = [];
-      }
-    });
-  </script>
-</body>
-</html>
+}
