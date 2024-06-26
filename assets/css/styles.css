@@ -1,0 +1,23 @@
+body {
+      transition: background-color 16s, color 16s;
+      background-color: white;
+      color: black;
+    }
+    body.space-mode {
+      background-color: #111;
+      color: #fff;
+    }
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 5s;
+    }
+    body.space-mode #starCanvas {
+      opacity: 1;
+    }
+
