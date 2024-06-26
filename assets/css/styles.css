@@ -14,7 +14,7 @@ html, body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #863b87;
+    color: rgb(0,0,0); /* Changed to black */
     transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
 
@@ -24,14 +24,14 @@ body {
 
 h1 {
     font-size: 40px;
-    color: #863b87;
+    color: rgb(0,0,0); /* Changed to black */
 }
 
 p, .desc, #sign {
     width: auto;
     margin: 0 auto;
     max-width: 359px; /* Match this with the container max-width */
-    color: #863b87;
+    color: rgb(0,0,0); /* Changed to black */
 }
 
 .desc {
@@ -52,7 +52,7 @@ p, .desc, #sign {
 }
 
 .social-link {
-    color: #863b87;
+    color: rgb(0,0,0); /* Changed to black */
     border-radius: 5px;
     font-size: 18px;
 }
@@ -64,7 +64,7 @@ p, .desc, #sign {
 
 #signature {
     font-size: 30px;
-    color: #rgb(0,0,0);
+    color: rgb(0,0,0); /* Changed to black */
     margin-top: 7px;
     line-height: 100%;
 }
@@ -83,8 +83,13 @@ body.space-mode {
     color: #863b87;
 }
 
+body.space-mode h1,
+body.space-mode p,
+body.space-mode .desc,
+body.space-mode #sign,
 body.space-mode a,
-body.space-mode a.social-link {
+body.space-mode a.social-link,
+body.space-mode #signature {
     color: #863b87;
 }
 
