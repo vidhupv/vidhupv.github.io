@@ -15,11 +15,10 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #c2f6ff;
-    transition: background-color 10s ease, color 10s ease; /* Transition for background and text color */
+    transition: background-color 10s ease, color 10s ease; /* Smooth transition */
 }
 
 body {
-    margin: 0; /* Remove margin to avoid border issues */
     padding: env(safe-area-inset);
 }
 
@@ -47,7 +46,6 @@ p, .desc, #sign {
 }
 
 .social li {
-    list-style: none; /* Remove default list styling */
     margin-right: 15px; /* Adjust spacing between links */
 }
 
@@ -55,7 +53,6 @@ p, .desc, #sign {
     color: #c2f6ff;
     border-radius: 5px;
     font-size: 18px;
-    font-family: 'JetBrains Mono', monospace; /* Ensure all text uses JetBrains Mono */
 }
 
 .social-link:hover {
@@ -64,7 +61,6 @@ p, .desc, #sign {
 }
 
 #signature {
-    font-family: 'JetBrains Mono', monospace; /* Ensure all text uses JetBrains Mono */
     font-size: 30px;
     color: #ffffff;
     margin-top: 7px;
