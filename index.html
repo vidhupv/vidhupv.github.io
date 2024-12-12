@@ -4,6 +4,43 @@
   <title>Vidhu P V</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .projects {
+      margin-top: 2rem;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .project {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    .project h3 {
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+    .project p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    .project-links {
+      margin-top: 0.5rem;
+    }
+    .project-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .project-links a:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -20,7 +57,40 @@
       <li><a class="social-link" href="https://www.linkedin.com/in/vidhupv/" target="_blank">LinkedIn</a></li>
       <li><a id="modeToggle" class="social-link" href="#">space-mode.exe</a></li>
       <li><a class="social-link" href="https://x.com/vidhupv" target="_blank">X</a></li>
+    </section>
 
+    <section class="projects">
+      <div class="project">
+        <h3>X-MCP (Twitter Integration in Claude)</h3>
+        <p>A Python MCP server enabling Twitter-Claude AI integration, featured in official MCP documentation. Reduced posting workflow from 10+ clicks to single prompt with OAuth 2.0 authentication and comprehensive error handling.</p>
+        <div class="project-links">
+          <a href="https://github.com/vidhupv/x-mcp" target="_blank">Github</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Plowtion - Most Popular Hack at UMass</h3>
+        <p>Farming assistance platform built in 36 hours. Features ML model with 78% accuracy for crop scheduling and real-time climate data integration across 13 API endpoints.</p>
+        <div class="project-links">
+          <a href="https://devpost.com/software/plowtion" target="_blank">Devpost</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Stock Price Prediction Using Conditional GANs</h3>
+        <p>Novel research analyzing 49 years of ExxonMobil stock data using c-GANs. Processes 11-day price windows around 80 major events with 87% accuracy in capturing event-specific movements.</p>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/drive/your-notebook-id" target="_blank">Colab</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Llama 3 Finetuning</h3>
+        <p>Fine-tuned Meta's Llama 3 8B model on mental health conversations, increasing training success from 47% to 96% using LoRA and Quantized Low-Rank Adaptation.</p>
+        <div class="project-links">
+          <a href="https://huggingface.co/vidhupv" target="_blank">HuggingFace</a>
+        </div>
+      </div>
     </section>
   </div>
 
