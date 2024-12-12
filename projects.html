@@ -7,8 +7,8 @@
   <style>
     body {
       min-height: 100vh;
-      display: block; /* Override flex display from main styles */
-      padding: 20px 0; /* Add some padding top and bottom */
+      display: block;
+      padding: 20px 0;
     }
 
     .projects-container {
@@ -80,4 +80,100 @@
     }
   </style>
 </head>
-[Rest of the HTML content remains exactly the same...]
+<body>
+  <div class="projects-container">
+    <a href="index.html" class="back-link">← Back</a>
+
+    <div class="project">
+      <h2>X-MCP (Twitter Integration in Claude)</h2>
+      <p>A Python MCP server enabling Twitter-Claude AI integration, featured in official MCP documentation after passing Anthropic's quality checks. Reduced posting workflow from 10+ clicks to single prompt with OAuth 2.0 authentication and comprehensive error handling.</p>
+      <a href="https://github.com/vidhupv/x-mcp" target="_blank" class="project-link">Github</a>
+    </div>
+
+    <div class="project">
+      <h2>Plowtion - Hack UMass Most Popular Hack</h2>
+      <p>Developed an agricultural assistance platform winning 'Most Popular Hack' award. Built ML model achieving 78% accuracy for crop scheduling predictions, integrating real-time climate data across 13 API endpoints to optimize farming decisions.</p>
+      <a href="https://devpost.com/software/plowtion" target="_blank" class="project-link">Devpost</a>
+    </div>
+
+    <div class="project">
+      <h2>Stock Price Prediction Using Conditional GANs</h2>
+      <p>Developed novel research using c-GANs to analyze 49 years of ExxonMobil stock data around 80 major events (22 hurricanes, 58 interest rate changes), achieving 87% accuracy in capturing event-specific price movements.</p>
+      <a href="https://colab.research.google.com/drive/your-notebook-id" target="_blank" class="project-link">Colab</a>
+    </div>
+
+    <div class="project">
+      <h2>Llama 3 Finetuning</h2>
+      <p>Fine-tuned Meta's Llama 3 8B model on a curated mental health conversations dataset, increasing training success rate from 47% to 96% using advanced fine-tuning strategies like LoRA and Quantized Low-Rank Adaptation.</p>
+      <a href="https://huggingface.co/vidhupv" target="_blank" class="project-link">HuggingFace</a>
+    </div>
+  </div>
+
+  <canvas id="starCanvas"></canvas>
+  
+  <script>
+    var starCanvas = document.getElementById('starCanvas');
+    var ctx = starCanvas.getContext('2d');
+    var stars = [];
+
+    function resizeCanvas() {
+      var ratio = window.devicePixelRatio || 1;
+      starCanvas.width = window.innerWidth * ratio;
+      starCanvas.height = window.innerHeight * ratio;
+      starCanvas.style.width = window.innerWidth + 'px';
+      starCanvas.style.height = window.innerHeight + 'px';
+      ctx.scale(ratio, ratio);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', resizeCanvas);
+    resizeCanvas();
+
+    function Star(x, y, radius) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.alpha = Math.random();
+      this.alphaChange = Math.random() * 0.04;
+
+      this.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      this.update = function() {
+        this.alpha += this.alphaChange;
+        if (this.alpha <= 0.1 || this.alpha >= 1) {
+          this.alphaChange = -this.alphaChange;
+        }
+      }
+    }
+
+    function createStars(count) {
+      for (var i = 0; i < count; i++) {
+        var x = Math.random() * starCanvas.width;
+        var y = Math.random() * starCanvas.height;
+        var radius = Math.random() * 1 + 1;
+        stars.push(new Star(x, y, radius));
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      stars.forEach(function(star) {
+        star.update();
+        star.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    createStars(200);
+    animate();
+  </script>
+</body>
+</html>
