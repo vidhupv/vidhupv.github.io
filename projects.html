@@ -5,74 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/styles.css">
   <style>
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
     .back-link {
       position: fixed;
       top: 20px;
       left: 20px;
       color: white;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       opacity: 0.8;
+      z-index: 100;
     }
     .back-link:hover {
       opacity: 1;
     }
-    .projects {
-      margin-top: 2rem;
-      padding: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .project-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 4rem;
     }
     .project {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-radius: 8px;
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
     }
     .project:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
-    .project h3 {
-      margin: 0;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+    .project h2 {
+      font-size: 1.4rem;
+      margin: 0 0 1rem 0;
     }
     .project p {
-      margin: 0.8rem 0;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      margin: 0 0 1rem 0;
+      opacity: 0.9;
     }
     .project-links {
-      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
     }
     .project-links a {
-      display: inline-block;
-      color: #fff;
+      color: white;
       text-decoration: none;
-      margin-right: 1rem;
+      font-size: 0.9rem;
       padding: 0.5rem 1rem;
-      border-radius: 4px;
       background: rgba(255, 255, 255, 0.1);
-      transition: background 0.3s ease;
+      border-radius: 6px;
+      transition: background 0.2s ease;
     }
     .project-links a:hover {
       background: rgba(255, 255, 255, 0.2);
     }
-    .container {
-      padding-top: 40px;
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
+  <canvas id="starCanvas"></canvas>
   <a href="index.html" class="back-link">← Back</a>
   
   <div class="container">
-    <div class="projects">
+    <div class="project-grid">
       <div class="project">
-        <h3>X-MCP (Twitter Integration in Claude)</h3>
+        <h2>X-MCP (Twitter Integration in Claude)</h2>
         <p>A Python MCP server enabling Twitter-Claude AI integration, featured in official MCP documentation after passing Anthropic's quality checks. Reduced posting workflow from 10+ clicks to single prompt with OAuth 2.0 authentication and comprehensive error handling.</p>
         <div class="project-links">
           <a href="https://github.com/vidhupv/x-mcp" target="_blank">Github</a>
@@ -80,23 +95,23 @@
       </div>
 
       <div class="project">
-        <h3>Plowtion - Hack UMass Most Popular Hack (Social Impact)</h3>
-        <p>Led the development of a farming assistance platform in 36 hours with a team of 5. Features ML model with 78% accuracy for crop scheduling and real-time climate data integration across 13 API endpoints. Built intuitive UI for farmers to access personalized planting schedules.</p>
+        <h2>Plowtion - Hack UMass Most Popular Hack</h2>
+        <p>Led 5-person cross-functional team to build farming assistance platform in 36-hour hackathon. Features ML model with 78% accuracy for crop scheduling and real-time climate data integration across 13 API endpoints. Built intuitive UI for farmers to access personalized planting schedules.</p>
         <div class="project-links">
           <a href="https://devpost.com/software/plowtion" target="_blank">Devpost</a>
         </div>
       </div>
 
       <div class="project">
-        <h3>Stock Price Prediction Using Conditional GANs</h3>
-        <p>Developed novel research analyzing 49 years of ExxonMobil stock data using c-GANs. Processes 11-day price windows around 80 major events (22 hurricanes, 58 interest rate changes), achieving 87% accuracy in capturing event-specific price movements.</p>
+        <h2>Stock Price Prediction Using Conditional GANs</h2>
+        <p>Developed novel research using c-GANs to analyze 49 years of ExxonMobil stock data around 80 major events (22 hurricanes, 58 interest rate changes), achieving 87% accuracy in capturing event-specific price movements.</p>
         <div class="project-links">
           <a href="https://colab.research.google.com/drive/your-notebook-id" target="_blank">Colab</a>
         </div>
       </div>
 
       <div class="project">
-        <h3>Llama 3 Finetuning</h3>
+        <h2>Llama 3 Finetuning</h2>
         <p>Fine-tuned Meta's Llama 3 8B model on a curated mental health conversations dataset, increasing training success rate from 47% to 96% using advanced fine-tuning strategies like LoRA and Quantized Low-Rank Adaptation.</p>
         <div class="project-links">
           <a href="https://huggingface.co/vidhupv" target="_blank">HuggingFace</a>
@@ -105,8 +120,6 @@
     </div>
   </div>
 
-  <canvas id="starCanvas"></canvas>
-  
   <script>
     var starCanvas = document.getElementById('starCanvas');
     var ctx = starCanvas.getContext('2d');
@@ -168,7 +181,6 @@
       requestAnimationFrame(animate);
     }
 
-    // Create and animate stars immediately
     createStars(200);
     animate();
   </script>
