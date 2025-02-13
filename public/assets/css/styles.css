@@ -1,0 +1,233 @@
+/* General Styles */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 218, 185); /* Peach background */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgb(0,0,0);
+    transition: background-color 15s ease, color 15s ease; /* Smooth transition */
+}
+
+body {
+    padding: env(safe-area-inset);
+}
+
+/* Container Styling */
+.container {
+    max-width: 359px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+h1, p, .desc, .social-link {
+    color: rgb(0,0,0);
+    transition: color 15s ease; /* Add transition to all text elements */
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    text-align: left;
+}
+
+p, .desc {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+.desc {
+    margin-bottom: 50px;
+    font-size: 18px; /* Adjust the font size to make it smaller */
+}
+
+/* Social Links Styling */
+.social {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+    flex-wrap: wrap;
+    margin-top: 25px;
+    padding: 0;
+}
+
+.social li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 15px; /* Space between links */
+    margin-bottom: 10px; /* Space below links */
+}
+
+.social-link {
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 2px 5px;
+    white-space: nowrap;
+}
+
+.social-link:hover {
+    color: #ffffff;
+    text-decoration: overline;
+}
+
+.name {
+    margin-bottom: -5px;
+}
+
+/* Space Mode Styles */
+body.space-mode {
+    background-color: rgb(10, 10, 11);
+    color: rgb(255, 218, 185); /* Changed to peach color */
+}
+
+body.space-mode h1,
+body.space-mode p,
+body.space-mode .desc,
+body.space-mode #sign,
+body.space-mode a,
+body.space-mode a.social-link,
+body.space-mode #signature {
+    color: rgb(255, 218, 185); /* Changed to peach color */
+}
+
+/* Star Canvas Styles */
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Ensure content is above the canvas */
+body * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Viewport Fit */
+@viewport {
+    width: device-width;
+    initial-scale: 1;
+    viewport-fit: cover;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px; /* Slightly reduce padding on smaller screens */
+    }
+    
+    .social {
+        justify-content: flex-start; /* Ensure left alignment on mobile */
+    }
+    
+    .social li {
+        margin-right: 10px; /* Slightly reduce space between links on mobile */
+    }
+}
+
+/* Blog Styles */
+.blog-container {
+    max-width: 359px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 30px;
+}
+
+.post-link {
+    font-size: 22px;
+    color: rgb(0,0,0);
+    text-decoration: none;
+    transition: color 15s ease;
+}
+
+.post-date {
+    font-size: 14px;
+    color: rgb(100,100,100);
+    margin-top: 5px;
+    transition: color 15s ease;
+}
+
+.back-link {
+    font-size: 14px;
+    color: rgb(0,0,0);
+    text-decoration: none;
+    margin-bottom: 30px;
+    display: block;
+    transition: color 15s ease;
+}
+
+.back-link:hover,
+.post-link:hover {
+    color: #ffffff;
+    text-decoration: overline;
+}
+
+/* Blog Post Content Styles */
+.post-title {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    color: rgb(0,0,0);
+    transition: color 15s ease;
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(0,0,0);
+    transition: color 15s ease;
+}
+
+.post-content h1 { font-size: 26px; }
+.post-content h2 { font-size: 24px; }
+.post-content h3 { font-size: 22px; }
+.post-content p { margin: 15px 0; }
+.post-content ul, .post-content ol { margin: 15px 0; padding-left: 20px; }
+.post-content li { margin: 5px 0; }
+.post-content code { background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 3px; }
+.post-content pre { overflow-x: auto; padding: 15px; background: rgba(0,0,0,0.05); border-radius: 5px; }
+.post-content img { max-width: 100%; height: auto; }
+
+/* Space Mode Blog Styles */
+body.space-mode .post-link,
+body.space-mode .back-link,
+body.space-mode .post-title,
+body.space-mode .post-content {
+    color: rgb(255, 218, 185);
+}
+
+body.space-mode .post-date {
+    color: rgb(200, 200, 200);
+}
+
+body.space-mode .post-content code,
+body.space-mode .post-content pre {
+    background: rgba(255,255,255,0.1);
+}

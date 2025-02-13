@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vidhu&#39;s Website</title>
+    <link>http://localhost:59641/</link>
+    <description>Recent content on Vidhu&#39;s Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:59641/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025</title>
+      <link>http://localhost:59641/writing/2025/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:59641/writing/2025/</guid>
+      <description>&lt;h1 id=&#34;learning-log-2025&#34;&gt;Learning Log 2025&lt;/h1&gt;&#xA;&lt;p&gt;A daily log of things I want to learn and track my progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;monthly-logs&#34;&gt;Monthly Logs&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:59641/writing/learning/2025-january&#34;&gt;January 2025&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;February 2025 (Coming soon)&lt;/li&gt;&#xA;&lt;li&gt;March 2025 (Coming soon)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>January 2025</title>
+      <link>http://localhost:59641/writing/2025-january/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:59641/writing/2025-january/</guid>
+      <description>&lt;h1 id=&#34;january-2025&#34;&gt;January 2025&lt;/h1&gt;&#xA;&lt;h3 id=&#34;week-1-jan-1---jan-7&#34;&gt;Week 1 (Jan 1 - Jan 7)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 1:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 2:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 3:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 4:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 5:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 6:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 7:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;week-2-jan-8---jan-14&#34;&gt;Week 2 (Jan 8 - Jan 14)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 8:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 9:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 10:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 11:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 12:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 13:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Jan 14:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;Format:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;[x]&lt;/code&gt; = Completed&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; = Not completed yet&lt;/li&gt;&#xA;&lt;li&gt;Add &lt;code&gt;✓&lt;/code&gt; at the end of completed items for better visibility&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:59641/writing/hello-world/</link>
+      <pubDate>Sun, 28 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:59641/writing/hello-world/</guid>
+      <description>&lt;p&gt;This is my first blog post. I&amp;rsquo;ll be sharing my thoughts on various topics here, including:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Technology&lt;/li&gt;&#xA;&lt;li&gt;Product Development&lt;/li&gt;&#xA;&lt;li&gt;Personal Growth&lt;/li&gt;&#xA;&lt;li&gt;Random Musings&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stay tuned for more content!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Log 2024</title>
+      <link>http://localhost:59641/writing/2024-learning/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:59641/writing/2024-learning/</guid>
+      <description>&lt;h1 id=&#34;learning-log-2024&#34;&gt;Learning Log 2024&lt;/h1&gt;&#xA;&lt;p&gt;A daily log of things I want to learn and track my progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;march-2024&#34;&gt;March 2024&lt;/h2&gt;&#xA;&lt;h3 id=&#34;week-1-mar-1---mar-7&#34;&gt;Week 1 (Mar 1 - Mar 7)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 1: Learn about Hugo static site generators ✓&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 2: Study basic TypeScript concepts&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 3: Practice React hooks&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 4: Explore CSS Grid layouts&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 5: Learn about Web Accessibility&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 6: Study Git branching strategies&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 7: Practice JavaScript promises&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;week-2-mar-8---mar-14&#34;&gt;Week 2 (Mar 8 - Mar 14)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 8:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 9:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 10:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 11:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 12:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 13:&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mar 14:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;Format:&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:59641/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:59641/projects/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

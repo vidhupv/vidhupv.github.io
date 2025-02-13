@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.142.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Vidhu P V</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin-top: 25px;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      border-bottom: 1px solid;
+      padding: 0.2rem 0;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: transparent;
+      opacity: 0.7;
+    }
+
+    .social {
+      position: fixed;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: rgba(255, 218, 185, 0.9);
+      padding: 0.5rem 1rem;
+      list-style: none;
+      width: fit-content;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+
+    body.space-mode .social {
+      background: rgba(10, 10, 11, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="name">Vidhu P V</h1>
+    <div class="desc">
+      <br>
+      <p> Hi! I love building products that people love to use. </p>
+      <br>
+      <p> Hit me up if you want to chat about startups, movies, games, music etc.! </p>
+      <p> ps: checkout the space mode</p>
+    </div>
+  
+    <ul class="nav-links">
+      <li><a class="social-link" href="/writing">writing</a></li>
+      <li><a class="social-link" href="/writing/learning/2025">learning</a></li>
+      <li><a class="social-link" href="/projects">projects</a></li>
+      <li><a id="modeToggle" class="social-link" href="#">space-mode.exe</a></li>
+    </ul>
+  </div>
+
+  <section class="social">
+    <li><a class="social-link" href="https://www.linkedin.com/in/vidhupv/" target="_blank">LinkedIn</a></li>
+    <li><a class="social-link" href="https://x.com/vidhupv" target="_blank">X</a></li>
+  </section>
+
+  <canvas id="starCanvas"></canvas>
+
+  <audio id="spaceModeAudio" loop>
+    <source src="audio/HighbyYoungthugEltonJohn.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    var toggleTimeout;
+    var starCanvas = document.getElementById('starCanvas');
+    var ctx = starCanvas.getContext('2d');
+    var stars = [];
+    var shootingStars = [];
+
+    function resizeCanvas() {
+      var ratio = window.devicePixelRatio || 1;
+      starCanvas.width = window.innerWidth * ratio;
+      starCanvas.height = window.innerHeight * ratio;
+      starCanvas.style.width = window.innerWidth + 'px';
+      starCanvas.style.height = window.innerHeight + 'px';
+      ctx.scale(ratio, ratio);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', resizeCanvas);
+    resizeCanvas();
+
+    function Star(x, y, radius) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.alpha = Math.random();
+      this.alphaChange = Math.random() * 0.04;
+
+      this.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      this.update = function() {
+        this.alpha += this.alphaChange;
+        if (this.alpha <= 0.1 || this.alpha >= 1) {
+          this.alphaChange = -this.alphaChange;
+        }
+      }
+    }
+
+    function ShootingStar() {
+      this.x = Math.random() * starCanvas.width;
+      this.y = 0;
+      this.length = Math.random() * 80 + 10;
+      this.speed = Math.random() * 10 + 6;
+      this.alpha = 1;
+
+      this.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x + this.length, this.y + this.length);
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.restore();
+      };
+
+      this.update = function() {
+        this.x += this.speed;
+        this.y += this.speed;
+        this.alpha -= 0.01;
+        if (this.alpha <= 0) {
+          this.reset();
+        }
+      };
+
+      this.reset = function() {
+        this.x = Math.random() * starCanvas.width;
+        this.y = 0;
+        this.length = Math.random() * 80 + 10;
+        this.speed = Math.random() * 10 + 6;
+        this.alpha = 1;
+      }
+    }
+
+    function createStars(count) {
+      for (var i = 0; i < count; i++) {
+        var x = Math.random() * starCanvas.width;
+        var y = Math.random() * starCanvas.height;
+        var radius = Math.random() * 1 + 1;
+        stars.push(new Star(x, y, radius));
+      }
+    }
+
+    function createShootingStars(count) {
+      for (var i = 0; i < count; i++) {
+        shootingStars.push(new ShootingStar());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      stars.forEach(function(star) {
+        star.update();
+        star.draw();
+      });
+      shootingStars.forEach(function(shootingStar) {
+        shootingStar.update();
+        shootingStar.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    document.getElementById('modeToggle').addEventListener('click', function(event) {
+      event.preventDefault();
+      var audio = document.getElementById('spaceModeAudio');
+
+      if (!document.body.classList.contains('space-mode')) {
+        
+        document.body.classList.add('space-mode');
+        audio.play();
+
+        
+        createStars(200);
+        animate();
+
+        
+        toggleTimeout = setTimeout(function() {
+          createShootingStars(4);
+        }, 16300);
+      } else {
+        
+        clearTimeout(toggleTimeout);
+        document.body.classList.remove('space-mode');
+        audio.pause();
+        audio.currentTime = 0;
+        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+        stars = [];
+        shootingStars = [];
+      }
+    });
+  </script>
+</body>
+</html> 

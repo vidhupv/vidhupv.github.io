@@ -1,0 +1,45 @@
+baseURL = "https://vidhupv.github.io/"
+languageCode = "en-us"
+title = "Vidhu's Website"
+
+# Enable raw HTML in markdown
+[markup.goldmark.renderer]
+  unsafe = true
+
+# Main navigation menu
+[[menu.main]]
+  identifier = "home"
+  name = "home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "projects"
+  name = "projects"
+  url = "/projects/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "writing"
+  name = "writing"
+  url = "/writing/"
+  weight = 3
+
+# URL structure
+[permalinks]
+  writing = "/writing/:filename/"
+  projects = "/projects/:filename/"
+
+# Content organization
+[taxonomies]
+  category = "categories"
+
+# Output formats
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[params]
+  mainSections = ["writing/thoughts", "writing/learning"]
