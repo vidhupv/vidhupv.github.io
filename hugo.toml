@@ -1,6 +1,7 @@
 baseURL = "https://vidhupv.github.io/"
 languageCode = "en-us"
 title = "Vidhu's Website"
+publishDir = "public"
 
 # Enable raw HTML in markdown
 [markup.goldmark.renderer]
