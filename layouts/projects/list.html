@@ -6,13 +6,13 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components/projects.css">
   <link rel="stylesheet" href="/css/components/space-mode.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <a href="/" class="back-link social-link">← back</a>
-    <ul class="nav-links">
-      <li><a id="modeToggle" class="social-link" href="#">space-mode.exe</a></li>
-    </ul>
+    <a href="/" class="back-link">← back</a>
 
     <div class="content">
       <h2 class="section-title">Projects</h2>
@@ -45,12 +45,7 @@
 
   <canvas id="starCanvas"></canvas>
 
-  <audio id="spaceModeAudio" loop>
-    <source src="/audio/HighbyYoungthugEltonJohn.mp3" type="audio/mpeg">
-  </audio>
-  
   <script>
-    const modeToggle = document.getElementById('modeToggle');
     const body = document.body;
     const starCanvas = document.getElementById('starCanvas');
     const ctx = starCanvas.getContext('2d');
@@ -114,18 +109,13 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    modeToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      spaceMode = !spaceMode;
-      body.classList.toggle('space-mode');
-      
-      if (spaceMode) {
-        createStars(200);
-        animate();
-      } else {
-        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-      }
-    });
+    // Check if space mode was active
+    if (localStorage.getItem('spaceMode') === 'true') {
+      spaceMode = true;
+      body.classList.add('space-mode');
+      createStars(200);
+      animate();
+    }
   </script>
 </body>
 </html> 

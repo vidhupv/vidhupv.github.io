@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Vidhu P V</title>
+  <title>Vidhu P V - Bookshelf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components/bookshelf.css">
   <link rel="stylesheet" href="/css/components/space-mode.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,14 +12,22 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="name">Vidhu P V</h1>
-  
-    <ul class="nav-links">
-      <li><a href="/writing">writing</a></li>
-      <li><a href="/bookshelf">bookshelf</a></li>
-      <li><a href="/projects">projects</a></li>
-      <li><a id="modeToggle" href="#">space-mode</a></li>
-    </ul>
+    <a href="/" class="back-link">← back</a>
+
+    <div class="content">
+      <h2 class="section-title">{{ .Title }}</h2>
+      {{ .Content }}
+      
+      <div class="book-list">
+        {{ range .Pages }}
+        <div class="book-item">
+          <img src="{{ .Params.cover }}" alt="{{ .Title }}" class="book-cover">
+          <h3 class="book-title">{{ .Title }}</h3>
+          <p class="book-author">{{ .Params.author }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
   </div>
 
   <section class="social">
@@ -29,7 +38,6 @@
   <canvas id="starCanvas"></canvas>
 
   <script>
-    const modeToggle = document.getElementById('modeToggle');
     const body = document.body;
     const starCanvas = document.getElementById('starCanvas');
     const ctx = starCanvas.getContext('2d');
@@ -100,22 +108,6 @@
       createStars(200);
       animate();
     }
-
-    modeToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      spaceMode = !spaceMode;
-      body.classList.toggle('space-mode');
-      
-      // Save space mode preference
-      localStorage.setItem('spaceMode', spaceMode);
-      
-      if (spaceMode) {
-        createStars(200);
-        animate();
-      } else {
-        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-      }
-    });
   </script>
 </body>
 </html> 

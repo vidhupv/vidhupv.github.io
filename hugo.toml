@@ -15,21 +15,28 @@ publishDir = "public"
   weight = 1
 
 [[menu.main]]
-  identifier = "projects"
-  name = "projects"
-  url = "/projects/"
-  weight = 2
-
-[[menu.main]]
   identifier = "writing"
   name = "writing"
   url = "/writing/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "bookshelf"
+  name = "bookshelf"
+  url = "/bookshelf/"
   weight = 3
+
+[[menu.main]]
+  identifier = "projects"
+  name = "projects"
+  url = "/projects/"
+  weight = 4
 
 # URL structure
 [permalinks]
   writing = "/writing/:filename/"
   projects = "/projects/:filename/"
+  bookshelf = "/bookshelf/:filename/"
 
 # Content organization
 [taxonomies]
