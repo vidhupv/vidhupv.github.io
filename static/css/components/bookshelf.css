@@ -5,9 +5,12 @@
 }
 
 .book-item {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book-item:last-child {
@@ -15,26 +18,25 @@
 }
 
 .book-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  display: inline-block;
-  margin-bottom: 0.25rem;
+  display: inline;
+  margin-right: 0.25rem;
 }
 
 .book-author {
   font-size: 0.9rem;
   color: #666;
-  margin: 0.25rem 0;
+  display: inline;
 }
 
 .book-status {
-  display: inline-block;
   font-size: 0.8rem;
   color: #4a6fa5;
   background-color: rgba(74, 111, 165, 0.1);
-  padding: 0.2rem 0.5rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 3px;
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 body.space-mode .book-author {
@@ -48,4 +50,10 @@ body.space-mode .book-item {
 body.space-mode .book-status {
   color: #81a4d9;
   background-color: rgba(129, 164, 217, 0.1);
+}
+
+@media (max-width: 600px) {
+  .book-item {
+    white-space: normal;
+  }
 } 

@@ -22,9 +22,9 @@
         {{ range .Pages }}
         <li class="book-item">
           <a href="https://www.google.com/search?q={{ .Title }}+{{ .Params.author }}+book" target="_blank" class="book-title">{{ .Title }}</a>
-          <p class="book-author">{{ .Params.author }}</p>
+          <span class="book-author"> by {{ .Params.author }}</span>
           {{ if eq .Params.status "reading" }}
-          <span class="book-status">Currently Reading</span>
+          <span class="book-status">Reading</span>
           {{ end }}
         </li>
         {{ end }}
