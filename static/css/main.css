@@ -54,8 +54,8 @@ a:hover {
 }
 
 .nav-links a[href="/writing"] {
-  color: #4a6fa5;
-  border-color: rgba(74, 111, 165, 0.3);
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
 }
 
 .nav-links a[href="/bookshelf"] {
@@ -64,13 +64,13 @@ a:hover {
 }
 
 .nav-links a[href="/projects"] {
-  color: #5ca58e;
-  border-color: rgba(92, 165, 142, 0.3);
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
 }
 
 .nav-links a[href="/curiosity"] {
-  color: #a55c7b;
-  border-color: rgba(165, 92, 123, 0.3);
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
 }
 
 .nav-links a:hover {
