@@ -1,30 +1,33 @@
 body {
-  font-family: monospace;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  background-color: rgb(255, 218, 185);
-  color: rgb(0, 0, 0);
-  transition: background-color 15s ease, color 15s ease;
+  background-color: #ffffff;
+  color: #121212;
+  transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1px;
+  transition: border-color 0.3s ease, opacity 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 218, 185);
+  opacity: 0.7;
+  border-color: #121212;
 }
 
 .back-link {
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 0.9rem;
   text-decoration: none;
   border-bottom: 1px solid;
 }
@@ -32,26 +35,51 @@ a:hover {
 .nav-links {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
+  margin: 3rem 0;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  align-items: center;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
 }
 
 .nav-links li {
-  display: inline-block;
+  display: block;
 }
 
 .nav-links a {
+  font-size: 1.1rem;
   text-decoration: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a[href="/writing"] {
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
+}
+
+.nav-links a[href="/bookshelf"] {
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
+}
+
+.nav-links a[href="/projects"] {
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
+}
+
+.nav-links a[href="/curiosity"] {
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  border-color: currentColor;
 }
 
 .social {
-  margin-top: 2rem;
+  margin-top: 4rem;
   list-style: none;
   padding: 0;
   position: fixed;
@@ -60,19 +88,19 @@ a:hover {
   right: 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  background: rgba(255, 218, 185, 0.9);
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
   padding: 0.5rem 1rem;
   width: fit-content;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 3px;
+  backdrop-filter: blur(5px);
 }
 
 .social-link {
-  font-size: 14px;
-  padding: 2px 5px;
-  border-radius: 5px;
-  border-bottom: none;
+  font-size: 0.9rem;
+  padding: 2px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .content {
@@ -83,6 +111,46 @@ a:hover {
 
 .section-title {
   margin-top: 0;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  padding-top: 3rem;
+}
+
+body.space-mode .nav-links a[href="/writing"],
+body.space-mode .nav-links a[href="/bookshelf"],
+body.space-mode .nav-links a[href="/projects"],
+body.space-mode .nav-links a[href="/curiosity"] {
+  color: #f5f5f5;
+  border-color: rgba(245, 245, 245, 0.3);
+}
+
+body.space-mode .nav-links a[href="/writing"]:hover,
+body.space-mode .nav-links a[href="/bookshelf"]:hover,
+body.space-mode .nav-links a[href="/projects"]:hover,
+body.space-mode .nav-links a[href="/curiosity"]:hover {
+  border-color: #f5f5f5;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .nav-links {
+    margin: 2rem 0;
+  }
 }

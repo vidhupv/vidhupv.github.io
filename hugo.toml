@@ -1,4 +1,4 @@
-baseURL = "https://vidhupv.github.io/"
+baseURL = "https://vidhupv.xyz/"
 languageCode = "en-us"
 title = "Vidhu's Website"
 publishDir = "public"
