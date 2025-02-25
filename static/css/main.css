@@ -15,7 +15,7 @@ a {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
   padding-bottom: 1px;
-  transition: border-color 0.3s ease, opacity 0.3s ease;
+  transition: border-color 0.3s ease, opacity 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
@@ -48,9 +48,34 @@ a:hover {
 .nav-links a {
   font-size: 1.1rem;
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid transparent;
   padding-bottom: 2px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+}
+
+.nav-links a[href="/writing"] {
+  color: #4a6fa5;
+  border-color: rgba(74, 111, 165, 0.3);
+}
+
+.nav-links a[href="/bookshelf"] {
+  color: #6b5ca5;
+  border-color: rgba(107, 92, 165, 0.3);
+}
+
+.nav-links a[href="/projects"] {
+  color: #5ca58e;
+  border-color: rgba(92, 165, 142, 0.3);
+}
+
+.nav-links a[href="/curiosity"] {
+  color: #a55c7b;
+  border-color: rgba(165, 92, 123, 0.3);
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  border-color: currentColor;
 }
 
 .social {
@@ -103,6 +128,21 @@ a:hover {
   flex-direction: column;
   min-height: 80vh;
   padding-top: 3rem;
+}
+
+body.space-mode .nav-links a[href="/writing"],
+body.space-mode .nav-links a[href="/bookshelf"],
+body.space-mode .nav-links a[href="/projects"],
+body.space-mode .nav-links a[href="/curiosity"] {
+  color: #f5f5f5;
+  border-color: rgba(245, 245, 245, 0.3);
+}
+
+body.space-mode .nav-links a[href="/writing"]:hover,
+body.space-mode .nav-links a[href="/bookshelf"]:hover,
+body.space-mode .nav-links a[href="/projects"]:hover,
+body.space-mode .nav-links a[href="/curiosity"]:hover {
+  border-color: #f5f5f5;
 }
 
 @media (max-width: 600px) {

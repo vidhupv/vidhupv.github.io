@@ -32,11 +32,18 @@ publishDir = "public"
   url = "/projects/"
   weight = 4
 
+[[menu.main]]
+  identifier = "curiosity"
+  name = "curiosity"
+  url = "/curiosity/"
+  weight = 5
+
 # URL structure
 [permalinks]
   writing = "/writing/:filename/"
   projects = "/projects/:filename/"
   bookshelf = "/bookshelf/:filename/"
+  curiosity = "/curiosity/:filename/"
 
 # Content organization
 [taxonomies]

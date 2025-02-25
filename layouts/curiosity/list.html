@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Vidhu P V</title>
+  <title>Vidhu P V - Curiosity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/components/space-mode.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .curiosity-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+    
+    .curiosity-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .curiosity-item:last-child {
+      border-bottom: none;
+    }
+    
+    .curiosity-date {
+      font-size: 0.9rem;
+      color: #666;
+      margin-right: 1rem;
+    }
+
+    body.space-mode .curiosity-date {
+      color: #aaa;
+    }
+    
+    body.space-mode .curiosity-item {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="name">Vidhu P V</h1>
-  
-    <ul class="nav-links">
-      <li><a href="/writing">writing</a></li>
-      <li><a href="/bookshelf">bookshelf</a></li>
-      <li><a href="/projects">projects</a></li>
-      <li><a href="/curiosity">curiosity</a></li>
-      <li><a id="modeToggle" href="#">space-mode</a></li>
-    </ul>
+    <a href="/" class="back-link">← back</a>
+
+    <div class="content">
+      <h2 class="section-title">{{ .Title }}</h2>
+      {{ .Content }}
+      
+      <ul class="curiosity-list">
+        {{ range .Pages.ByDate.Reverse }}
+        <li class="curiosity-item">
+          <span class="curiosity-date">{{ .Date.Format "2006-01-02" }}</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
   </div>
 
   <section class="social">
@@ -30,7 +67,6 @@
   <canvas id="starCanvas"></canvas>
 
   <script>
-    const modeToggle = document.getElementById('modeToggle');
     const body = document.body;
     const starCanvas = document.getElementById('starCanvas');
     const ctx = starCanvas.getContext('2d');
@@ -101,22 +137,6 @@
       createStars(200);
       animate();
     }
-
-    modeToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      spaceMode = !spaceMode;
-      body.classList.toggle('space-mode');
-      
-      // Save space mode preference
-      localStorage.setItem('spaceMode', spaceMode);
-      
-      if (spaceMode) {
-        createStars(200);
-        animate();
-      } else {
-        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
-      }
-    });
   </script>
 </body>
 </html> 
