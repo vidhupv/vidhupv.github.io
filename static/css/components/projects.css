@@ -39,5 +39,12 @@
   font-size: 0.9em;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid currentColor;
+  border: 1px solid rgba(107, 92, 165, 0.4);
+  background-color: rgba(107, 92, 165, 0.05);
+  color: #6b5ca5;
+}
+
+.project-link:hover {
+  background-color: rgba(107, 92, 165, 0.1);
+  border-color: rgba(107, 92, 165, 0.6);
 }

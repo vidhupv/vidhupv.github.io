@@ -4,11 +4,28 @@ body.space-mode {
 }
 
 body.space-mode a {
-  border-color: #444;
+  color: #a193d9;
+  border-color: rgba(161, 147, 217, 0.3);
 }
 
 body.space-mode a:hover {
-  border-color: #f5f5f5;
+  border-color: rgba(161, 147, 217, 0.7);
+}
+
+body.space-mode .project-link {
+  background-color: rgba(161, 147, 217, 0.1);
+  border-color: rgba(161, 147, 217, 0.4);
+  color: #a193d9;
+}
+
+body.space-mode .project-link:hover {
+  background-color: rgba(161, 147, 217, 0.2);
+  border-color: rgba(161, 147, 217, 0.6);
+}
+
+body.space-mode .book-status {
+  color: #a193d9;
+  background-color: rgba(161, 147, 217, 0.2);
 }
 
 body.space-mode .project-item {

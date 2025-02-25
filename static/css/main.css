@@ -11,16 +11,16 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #6b5ca5;
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(107, 92, 165, 0.3);
   padding-bottom: 1px;
   transition: border-color 0.3s ease, opacity 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  opacity: 0.7;
-  border-color: #121212;
+  opacity: 0.8;
+  border-color: rgba(107, 92, 165, 0.7);
 }
 
 .back-link {
@@ -29,7 +29,8 @@ a:hover {
   left: 1.5rem;
   font-size: 0.9rem;
   text-decoration: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid rgba(107, 92, 165, 0.3);
+  color: #6b5ca5;
 }
 
 .nav-links {
@@ -91,7 +92,8 @@ a:hover {
 .social-link {
   font-size: 0.9rem;
   padding: 2px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(107, 92, 165, 0.3);
+  color: #6b5ca5;
 }
 
 .content {

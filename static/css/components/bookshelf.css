@@ -22,6 +22,12 @@
   font-weight: 500;
   display: inline;
   margin-right: 0.25rem;
+  color: #6b5ca5;
+  border-bottom: 1px solid rgba(107, 92, 165, 0.3);
+}
+
+.book-title:hover {
+  border-color: rgba(107, 92, 165, 0.7);
 }
 
 .book-author {
@@ -32,8 +38,8 @@
 
 .book-status {
   font-size: 0.8rem;
-  color: #4a6fa5;
-  background-color: rgba(74, 111, 165, 0.1);
+  color: #6b5ca5;
+  background-color: rgba(107, 92, 165, 0.1);
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   margin-left: 0.5rem;
@@ -48,8 +54,17 @@ body.space-mode .book-item {
 }
 
 body.space-mode .book-status {
-  color: #81a4d9;
-  background-color: rgba(129, 164, 217, 0.1);
+  color: #a193d9;
+  background-color: rgba(161, 147, 217, 0.2);
+}
+
+body.space-mode .book-title {
+  color: #a193d9;
+  border-color: rgba(161, 147, 217, 0.3);
+}
+
+body.space-mode .book-title:hover {
+  border-color: rgba(161, 147, 217, 0.7);
 }
 
 @media (max-width: 600px) {
