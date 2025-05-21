@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>🚢 Harbor Timeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components/space-mode.css">
+  <style>
+    .timeline {
+      border-left: 3px solid #6b5ca5;
+      margin: 3rem 0 0 2rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .timeline-date {
+      font-weight: 600;
+      color: #6b5ca5;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .timeline-entry {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .timeline-entry:before {
+      content: "";
+      position: absolute;
+      left: -2.2rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background: #fff;
+      border: 2px solid #6b5ca5;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    body.space-mode .timeline {
+      border-color: #a193d9;
+    }
+    body.space-mode .timeline-date {
+      color: #a193d9;
+    }
+    body.space-mode .timeline-entry:before {
+      border-color: #a193d9;
+      background: #121212;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back-link">← back</a>
+    <div class="content">
+      <h2 class="section-title">🚢 Harbor Timeline</h2>
+      <div class="timeline">
+        {{ .Content | markdownify }}
+      </div>
+    </div>
+  </div>
+  <section class="social">
+    <li><a class="social-link" href="https://www.linkedin.com/in/vidhupv/" target="_blank">LinkedIn</a></li>
+    <li><a class="social-link" href="https://x.com/vidhupv" target="_blank">X</a></li>
+  </section>
+  <canvas id="starCanvas"></canvas>
+</body>
+</html> 

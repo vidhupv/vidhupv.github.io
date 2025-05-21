@@ -27,16 +27,10 @@ publishDir = "public"
   weight = 3
 
 [[menu.main]]
-  identifier = "projects"
-  name = "projects"
-  url = "/projects/"
+  identifier = "harbor"
+  name = "🚢 harbor"
+  url = "/harbor/"
   weight = 4
-
-[[menu.main]]
-  identifier = "curiosity"
-  name = "curiosity"
-  url = "/curiosity/"
-  weight = 5
 
 # URL structure
 [permalinks]
